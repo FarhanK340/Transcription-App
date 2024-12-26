@@ -1,0 +1,12 @@
+name: Testing
+on: push
+
+jobs: 
+  test_project:
+    runs-on: ubuntu-latest
+    steps: 
+    - uses: actions/checkout@v2
+    - name: Run Django Tests
+      run: |
+        pip install -r requirements.txt
+        python manage.py tests liveTranscription.tests chatApp.tests transcriptionApp.tests
