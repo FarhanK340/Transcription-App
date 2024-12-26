@@ -126,3 +126,4 @@ class TestChatAppMessageView(TestCase):
             Message.objects.filter(room=new_room_with_no_messages),
             transform=lambda x: x
         )
+
