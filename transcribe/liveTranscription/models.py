@@ -8,6 +8,16 @@ class Session(models.Model):
     def __str__(self):
         return self.session_name
 
+    def clean(self):
+        if not self.session_name:
+            raise ValueError("Session name should not be empty")
+        if len(self.session_name) > 255:
+            raise ValueError("Session name should not be greater than 255 characters")
+
+    def save(self, *args, **kwargs):
+        self.clean()
+        super().save(*args, **kwargs)
+
 class Transcription(models.Model):
     session = models.ForeignKey(
         Session,
