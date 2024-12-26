@@ -6,9 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
     - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
     - name: Run Django Tests
-      run: |
-        sudo apt update
-        sudo apt install build-essential python3-dev
-        pip3 install -r requirements.txt
-        python3 manage.py test liveTranscription.tests chatApp.tests transcriptionApp.tests
+    - run: sudo apt update
+    - run: sudo apt install build-essential python3-dev
+    - run: pip3 install -r requirements.txt
+    - run: python3 manage.py tests liveTranscription.tests chatApp.tests transcriptionApp.tests
