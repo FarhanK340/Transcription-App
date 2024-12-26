@@ -9,4 +9,4 @@ jobs:
     - name: Run Django Tests
       run: |
         pip install -r requirements.txt
-        python manage.py tests liveTranscription.tests chatApp.tests transcriptionApp.tests
+        python manage.py test liveTranscription.tests chatApp.tests transcriptionApp.tests
