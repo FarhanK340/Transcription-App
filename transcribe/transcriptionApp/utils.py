@@ -32,7 +32,7 @@ def split_large_audio(file_path, max_size_mb=25):
     duration_ms = len(audio)
     chunk_duration_ms = chunk_size / (audio.frame_rate * audio.frame_width)
 
-    for i in range(0, duration_ms, chunk_duration_ms):
+    for i in range(0, int(duration_ms), int(chunk_duration_ms)):
         chunk = audio[i:i + chunk_duration_ms]
         chunk_path = f"{file_path}_{i // chunk_duration_ms}.wav"
         chunk.export(chunk_path, format="wav")
