@@ -150,6 +150,7 @@ AWS_S3_REGION_NAME = env('AWS_S3_REGION_NAME')
 AWS_S3_USE_SSL = True
 AWS_S3_VERIFY = True
 
+
 # Celery settings
 CELERY_BROKER_URL = 'redis://localhost:6379'
 CELERY_RESULT_BACKEND = 'redis://localhost:6379'
